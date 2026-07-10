@@ -140,13 +140,13 @@
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
                 <nav class="flex bg-transparent p-2 overflow-x-auto gap-1.5 shadow-none">
                     <button onclick="switchTab('kp2027')" id="tab-kp2027" class="nav-tab flex items-center justify-center px-5 py-3 text-xs font-semibold rounded-xl whitespace-nowrap transition-all duration-300 text-slate-300 hover:text-white hover:bg-slate-800/70">
-                        <i class="fas fa-graduation-cap mr-2"></i> Panduan KP2027
+                        <i class="fas fa-graduation-cap mr-2"></i> Panduan Kurikulum Prasekolah
                     </button>
                     <button onclick="switchTab('dashboard')" id="tab-dashboard" class="nav-tab flex items-center justify-center px-5 py-3 text-xs font-bold rounded-xl whitespace-nowrap transition-all duration-300 bg-white text-[#0B1528] shadow-md hover:shadow-lg">
                         <i class="fas fa-chart-line mr-2"></i> Ringkasan Laporan
                     </button>
                     <button onclick="switchTab('penilaian')" id="tab-penilaian" class="nav-tab flex items-center justify-center px-5 py-3 text-xs font-semibold rounded-xl whitespace-nowrap transition-all duration-300 text-slate-300 hover:text-white hover:bg-slate-800/70">
-                        <i class="fas fa-file-alt mr-2"></i> Kemasukan Borang
+                        <i class="fas fa-file-alt mr-2"></i> Pengisian Pentaksiran
                     </button>
                     <button onclick="switchTab('pelaporan')" id="tab-pelaporan" class="nav-tab flex items-center justify-center px-5 py-3 text-xs font-semibold rounded-xl whitespace-nowrap transition-all duration-300 text-slate-300 hover:text-white hover:bg-slate-800/70">
                         <i class="fas fa-award mr-2"></i> Transkrip Murid
@@ -158,7 +158,7 @@
                         <i class="fas fa-cog mr-2"></i> Tetapan
                     </button>
                     <button onclick="switchTab('analytics')" id="tab-analytics" class="nav-tab flex items-center justify-center px-5 py-3 text-xs font-semibold rounded-xl whitespace-nowrap transition-all duration-300 text-slate-300 hover:text-white hover:bg-slate-800/70">
-                        <i class="fas fa-chart-bar mr-2"></i> Analitik
+                        <i class="fas fa-chart-bar mr-2"></i> Analisis Data
                     </button>
                     <button onclick="switchTab('help')" id="tab-help" class="nav-tab flex items-center justify-center px-5 py-3 text-xs font-semibold rounded-xl whitespace-nowrap transition-all duration-300 text-slate-300 hover:text-white hover:bg-slate-800/70">
                         <i class="fas fa-question-circle mr-2"></i> Bantuan
@@ -175,7 +175,7 @@
         
         <!-- ======== TAB SETUP: TEMPLATE CONFIGURATION ======== -->
         <section id="content-setup" class="tab-content hidden max-w-4xl mx-auto space-y-10 no-print">
-            <div class="bg-gradient-to-r from-sky-500 to-blue-600 text-white rounded-3xl p-8 border border-sky-400/20">
+            <div class="bg-blue-600 text-white rounded-3xl p-8 border border-sky-400/20">
                 <h2 class="text-2xl font-extrabold uppercase tracking-tight flex items-center gap-3">
                     <i class="fas fa-cog" class="w-7 h-7"></i>
                     Tetapan Template Pentaksiran
@@ -218,6 +218,21 @@
                 <button onclick="saveTemplateSettings()" class="w-full bg-[#0B1528] hover:bg-[#121F35] text-white font-bold text-xs py-4 rounded-xl shadow-lg transition-all uppercase tracking-widest flex items-center justify-center gap-2">
                     <i class="fas fa-save" class="w-5 h-5"></i>
                     <span>Simpan Maklumat Sekolah &amp; Guru</span>
+                </button>
+            </div>
+
+            <!-- TETAPAN SUBJEK DIAJAR -->
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6 premium-card">
+                <h3 class="text-sm font-extrabold text-[#0B1528] uppercase tracking-wider flex items-center gap-2">
+                    <i class="fas fa-clipboard-check" class="w-5 h-5 text-blue-600"></i>Tetapan Subjek Diajar
+                </h3>
+                <p class="text-xs text-slate-600 leading-relaxed">Pilih subjek yang anda ajar sahaja. Hanya subjek yang dipilih di sini akan dipaparkan dalam dropdown "Bidang" di tab Pengisian Pentaksiran. Jika tiada subjek dipilih, semua subjek akan dipaparkan secara lalai.</p>
+
+                <div id="subject-checklist-container" class="grid grid-cols-2 sm:grid-cols-3 gap-3"></div>
+
+                <button onclick="saveTaughtSubjects()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs py-4 rounded-xl shadow-lg transition-all uppercase tracking-widest flex items-center justify-center gap-2">
+                    <i class="fas fa-save" class="w-5 h-5"></i>
+                    <span>Simpan Subjek Diajar</span>
                 </button>
             </div>
 
@@ -285,7 +300,7 @@
                 <ol class="space-y-2.5 text-xs text-sky-900 list-decimal list-inside leading-relaxed">
                     <li><strong>Lengkapkan Maklumat Sekolah:</strong> Masukkan nama sekolah, nama guru, dan tahun akademik anda.</li>
                     <li><strong>Tambah Senarai Murid:</strong> Masukkan semua nama murid dalam kelas anda satu per satu.</li>
-                    <li><strong>Pilih Tab "Kemasukan Borang":</strong> Mulai merekod penilaian harian murid mengikut komponen.</li>
+                    <li><strong>Pilih Tab "Pengisian Pentaksiran":</strong> Mulai merekod penilaian harian murid mengikut komponen.</li>
                     <li><strong>Lihat Analisis:</strong> Tab "Ringkasan Laporan" menunjukkan statistik dan pencapaian murid secara keseluruhan.</li>
                     <li><strong>Cetak Laporan Rasmi:</strong> Gunakan tab "Transkrip Murid" untuk menghasilkan sijil dan laporan individu.</li>
                     <li><strong>Simpan & Backup:</strong> Semua data disimpan di peranti anda. Saran: Eksport data secara berkala untuk backup.</li>
@@ -330,11 +345,11 @@
 
         <!-- ======== TAB 1: DASHBOARD ======== -->
         <section id="content-kp2027" class="tab-content hidden space-y-10">
-            <div class="bg-gradient-to-r from-blue-500 via-emerald-500 to-orange-400 text-white rounded-3xl p-8 no-print">
+            <div class="bg-blue-600 text-white rounded-3xl p-8 no-print">
                 <h2 class="text-2xl font-extrabold uppercase tracking-tight flex items-center gap-3">
-                    <i class="fas fa-graduation-cap" class="w-7 h-7"></i>Panduan KP2027
+                    <i class="fas fa-graduation-cap" class="w-7 h-7"></i>Panduan Kurikulum Prasekolah
                 </h2>
-                <p class="text-sm text-white/90 mt-2">Infografik ringkas Kurikulum Prasekolah 2027 — matlamat, kompetensi, bidang pembelajaran &amp; sistem TP.</p>
+                <p class="text-sm text-white/90 mt-2">Infografik ringkas Kurikulum Prasekolah 2026 — matlamat, kompetensi, bidang pembelajaran &amp; sistem TP.</p>
             </div>
 
             <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm premium-card">
@@ -654,6 +669,10 @@
                         <button onclick="filterDashboardBidang('PI')" id="dash-btn-pi" class="px-5 py-3 text-[10px] font-bold rounded-xl transition-all duration-300 bg-slate-50 border border-slate-200 text-slate-650 hover:bg-slate-100 uppercase">Pendidikan Islam</button>
                         <button onclick="filterDashboardBidang('FK')" id="dash-btn-fk" class="px-5 py-3 text-[10px] font-bold rounded-xl transition-all duration-300 bg-slate-50 border border-slate-200 text-slate-650 hover:bg-slate-100 uppercase">Fizikal & Kesejahteraan</button>
                         <button onclick="filterDashboardBidang('SE')" id="dash-btn-se" class="px-5 py-3 text-[10px] font-bold rounded-xl transition-all duration-300 bg-slate-50 border border-slate-200 text-slate-650 hover:bg-slate-100 uppercase">Sosioemosi</button>
+                        <button onclick="filterDashboardBidang('KW')" id="dash-btn-kw" class="px-5 py-3 text-[10px] font-bold rounded-xl transition-all duration-300 bg-slate-50 border border-slate-200 text-slate-650 hover:bg-slate-100 uppercase">Kewarganegaraan</button>
+                        <button onclick="filterDashboardBidang('PM')" id="dash-btn-pm" class="px-5 py-3 text-[10px] font-bold rounded-xl transition-all duration-300 bg-slate-50 border border-slate-200 text-slate-650 hover:bg-slate-100 uppercase">Pendidikan Moral</button>
+                        <button onclick="filterDashboardBidang('BC')" id="dash-btn-bc" class="px-5 py-3 text-[10px] font-bold rounded-xl transition-all duration-300 bg-slate-50 border border-slate-200 text-slate-650 hover:bg-slate-100 uppercase">Bahasa Cina</button>
+                        <button onclick="filterDashboardBidang('BT')" id="dash-btn-bt" class="px-5 py-3 text-[10px] font-bold rounded-xl transition-all duration-300 bg-slate-50 border border-slate-200 text-slate-650 hover:bg-slate-100 uppercase">Bahasa Tamil</button>
                     </div>
                 </div>
                 
@@ -729,6 +748,10 @@
                             <option value="PI">Pendidikan Islam / Moral (PI)</option>
                             <option value="FK">Fizikal dan Kesejahteraan (FK)</option>
                             <option value="SE">Sosioemosi (SE)</option>
+                            <option value="KW">Pendidikan Kewarganegaraan (KW)</option>
+                            <option value="PM">Pendidikan Moral (PM)</option>
+                            <option value="BC">Bahasa Cina (BC)</option>
+                            <option value="BT">Bahasa Tamil (BT)</option>
                         </select>
                     </div>
                     <div class="space-y-2.5">
@@ -887,6 +910,10 @@
                     <option value="PI">PI</option>
                     <option value="FK">FK</option>
                     <option value="SE">SE</option>
+                    <option value="KW">KW</option>
+                    <option value="PM">PM</option>
+                    <option value="BC">BC</option>
+                    <option value="BT">BT</option>
                 </select>
             </div>
             <div class="bg-white rounded-3xl border border-slate-200/80 overflow-hidden shadow-sm premium-card">
@@ -1065,9 +1092,9 @@ function doPost(e) {
 
         <!-- ======== TAB 10: ANALITIK & LAPORAN ======== -->
         <section id="content-analytics" class="tab-content hidden space-y-10">
-            <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-3xl p-8 no-print">
+            <div class="bg-blue-600 text-white rounded-3xl p-8 no-print">
                 <h2 class="text-2xl font-extrabold uppercase tracking-tight flex items-center gap-3">
-                    <i class="fas fa-chart-bar" class="w-7 h-7"></i>Analitik & Laporan Prestasi
+                    <i class="fas fa-chart-bar" class="w-7 h-7"></i>Analisis Data & Laporan Prestasi
                 </h2>
                 <p class="text-sm text-blue-100 mt-2">Lihat pandangan keseluruhan pencapaian kelas dalam format statistik dan visualisasi.</p>
             </div>
@@ -1108,7 +1135,7 @@ function doPost(e) {
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="analytics-3m-groups"></div>
                 <div class="mt-6 bg-indigo-50 border border-indigo-200 rounded-xl p-5">
                     <h4 class="text-xs font-black text-indigo-800 uppercase tracking-wide flex items-center gap-2 mb-2">
-                        <i class="fas fa-route" class="w-4 h-4"></i>Cadangan Pelan Tindakan Awal (Rujukan KP2027)
+                        <i class="fas fa-route" class="w-4 h-4"></i>Cadangan Pelan Tindakan Awal (Rujukan KP2026)
                     </h4>
                     <div class="text-xs text-indigo-700 leading-relaxed" id="analytics-3m-action-plan"></div>
                 </div>
@@ -1116,14 +1143,14 @@ function doPost(e) {
 
             <div class="bg-blue-50 border border-blue-200 rounded-3xl p-8 no-print">
                 <button onclick="openPrintWizard('analytics')" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl transition-all">
-                    <i class="fas fa-print" class="w-4 h-4 inline mr-2"></i>Cetak Laporan Analitik
+                    <i class="fas fa-print" class="w-4 h-4 inline mr-2"></i>Cetak Laporan Analisis Data
                 </button>
             </div>
         </section>
 
         <!-- ======== TAB HELP: BANTUAN & PANDUAN ======== -->
         <section id="content-help" class="tab-content hidden max-w-4xl mx-auto space-y-10 no-print">
-            <div class="bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-3xl p-8">
+            <div class="bg-blue-600 text-white rounded-3xl p-8">
                 <h2 class="text-2xl font-extrabold uppercase tracking-tight flex items-center gap-3">
                     <i class="fas fa-question-circle" class="w-7 h-7"></i>Pusat Bantuan
                 </h2>
@@ -1432,90 +1459,103 @@ function doPost(e) {
             KE: "Kreativiti dan Estetika",
             PI: "Pendidikan Islam / Moral",
             FK: "Fizikal dan Kesejahteraan",
-            SE: "Sosioemosi"
-        };
-
-        const BIDANG_RINGKASAN = {
-            SE: "Bidang ini memberi penekanan kepada proses mengembangkan keupayaan murid untuk mengenal dan mengurus emosi sendiri, serta membina kemahiran sosial yang positif dalam interaksi harian bersama orang lain dan persekitaran. Ia menjadi asas kepada pembinaan konsep kendiri yang positif bagi membantu murid menangani cabaran kehidupan.",
-            FK: "Bidang ini merangkumi perkembangan jasmani, kesihatan, dan kesejahteraan diri. Fokusnya adalah untuk membentuk kecergasan dan ketangkasan tubuh melalui pergerakan asas serta memupuk amalan gaya hidup sihat dan selamat.",
-            PI: "Bidang ini menekankan penghayatan ajaran agama (Pendidikan Islam), pengamalan nilai murni dalam kehidupan (Pendidikan Moral), dan pelaksanaan peranan sebagai warganegara yang bertanggungjawab (Pendidikan Kewarganegaraan).",
-            BM: "Subbidang ini memberi penekanan kepada kebolehan murid untuk memahami maklumat melalui kemahiran mendengar dan membaca, serta keupayaan mengekspresi diri melalui kemahiran bertutur dan menulis. Ia juga memperkenalkan aspek seni bahasa melalui lagu, puisi, dan cerita kanak-kanak.",
-            BI: "Subbidang ini memfokuskan kepada keupayaan pemahaman murid dalam mendengar dan membaca (comprehension), serta penggunaan ekspresi yang sesuai dalam pertuturan dan penulisan untuk interaksi yang berkesan. Ia diselaraskan dengan Common European Framework of Reference for Languages (CEFR).",
-            KF: "Bidang ini memberi peluang kepada murid untuk mengembangkan sikap ingin tahu melalui penerokaan maklumat di persekitaran. Ia menggalakkan murid berfikir secara sistematik dan menggunakan maklumat untuk menyelesaikan masalah.",
-            KE: "Bidang ini bertujuan memupuk daya imaginasi dan kreativiti murid melalui seni visual, muzik dan gerakan, serta drama. Murid diberi peluang meluahkan perasaan dan menghargai keindahan di sekeliling mereka."
+            SE: "Sosioemosi",
+            KW: "Pendidikan Kewarganegaraan",
+            PM: "Pendidikan Moral",
+            BC: "Bahasa Cina",
+            BT: "Bahasa Tamil"
         };
 
         const COMPONENTS = {
             BM: [
-                { id: 'BM 1.1', type: 'Rekod Anekdot', desc: 'Mendengar dan memberi respons yang betul dalam pelbagai situasi.' },
-                { id: 'BM 2.1', type: 'Skala Kadar', desc: 'Bertutur secara jelas dan sopan dalam perbualan harian berdasarkan pelbagai situasi.' },
-                { id: 'BM 3.2', type: 'Senarai Semak', desc: 'Membaca dan memahami teks.', items: ["Mengecam bentuk huruf", "Mengecam vokal", "Membaca suku kata mudah", "Membaca perkataan mudah", "Membaca frasa ringkas", "Memahami ayat mudah"] },
-                { id: 'BM 4.2', type: 'Skala Kadar', desc: 'Boleh menyampaikan idea melalui simbol, lukisan dan penulisan.' }
+                { id: 'BM 1', type: 'Rekod Anekdot', desc: 'Mendengar dan memberi respons yang betul dalam pelbagai situasi.' },
+                { id: 'BM 2', type: 'Skala Kadar', desc: 'Bertutur secara jelas dan sopan dalam perbualan harian berdasarkan pelbagai situasi.' },
+                { id: 'BM 3', type: 'Senarai Semak', desc: 'Membaca dan memahami teks.', items: ["Mengecam bentuk huruf", "Mengecam vokal", "Membaca suku kata mudah", "Membaca perkataan mudah", "Membaca frasa ringkas", "Memahami ayat mudah"] },
+                { id: 'BM 4', type: 'Skala Kadar', desc: 'Boleh menyampaikan idea melalui simbol, lukisan dan penulisan.' }
             ],
             BI: [
-                { id: 'BI 1.1', type: 'Rekod Anekdot', desc: 'Listen, understand and respond appropriately according to the situation.' },
-                { id: 'BI 1.2', type: 'Senarai Semak', desc: 'Listen, recognise sounds and respond to simple stimuli.', items: ["Recognise alphabet sounds", "Respond using visual cues", "Recognise environmental sounds", "Recognise simple word sounds", "Respond to simple instructions", "Identify initial sounds in words"] },
-                { id: 'BI 2.1', type: 'Skala Kadar', desc: 'Communicate orally and build self-confidence.' },
-                { id: 'BI 3.2', type: 'Senarai Semak', desc: 'Read and understand simple everyday texts.', items: ["Recognise simple words", "Read simple phrases", "Recognise the alphabet", "Read simple sentences", "Understand the meaning of high-frequency words", "Recognise basic punctuation"] },
-                { id: 'BI 4.2', type: 'Skala Kadar', desc: 'Communicate ideas through writing, symbols or drawings.' }
+                { id: 'BI 1', type: 'Senarai Semak', desc: 'Listen, understand and respond appropriately in a variety of contexts.', items: ["Recognise alphabet sounds", "Respond using visual cues", "Recognise environmental sounds", "Recognise simple word sounds", "Respond to simple instructions", "Identify initial sounds in words"] },
+                { id: 'BI 2', type: 'Skala Kadar', desc: 'Respond to conversations appropriately for different purposes.' },
+                { id: 'BI 3', type: 'Senarai Semak', desc: 'Read and understand texts or visuals in print or digital materials.', items: ["Recognise simple words", "Read simple phrases", "Recognise the alphabet", "Read simple sentences", "Understand the meaning of high-frequency words", "Recognise basic punctuation"] },
+                { id: 'BI 4', type: 'Skala Kadar', desc: 'Communicate thoughts and information in drawings, symbols or writings.' }
             ],
             KF: [
-                { id: 'KF 1.1', type: 'Senarai Semak', desc: 'Menyusun maklumat matematik dalam persekitaran berdasarkan ciri dan mencari perkaitan.', items: ["Menyusun seriasi objek", "Mengisih objek mengikut ciri", "Membanding beza saiz objek", "Mengelaskan objek mengikut kumpulan", "Mengenal pasti pola mudah", "Menerangkan sebab pengelasan"] },
-                { id: 'KF 1.2', type: 'Skala Kadar', desc: 'Menunjukkan sifat ingin tahu dan minat untuk meneroka / Menganalisis kejadian alam.' },
-                { id: 'KF 1.3', type: 'Senarai Semak', desc: 'Membuat hubung kait hasil warisan / Mengendali peranti digital dengan selamat.', items: ["Kenal pasti hasil warisan", "Sedar keselamatan digital", "Menyatakan ciri hasil warisan", "Menamakan peranti digital", "Menggunakan peranti digital dengan bimbingan", "Mengamalkan tabiat digital yang selamat"] },
-                { id: 'KF 2.1', type: 'Skala Kadar', desc: 'Memahami hubungan konsep nombor dengan kuantiti dalam kehidupan harian.' },
-                { id: 'KF 2.2', type: 'Skala Kadar', desc: 'Menganalisis maklumat yang diperolehi untuk mengenal pasti punca kejadian alam.' },
-                { id: 'KF 2.3', type: 'Skala Kadar', desc: 'Mengendalikan peranti digital dengan selamat dan bertanggungjawab.' },
-                { id: 'KF 3.1', type: 'Rekod Anekdot', desc: 'Mempamerkan kemampuan menyelesaikan masalah harian berdasarkan maklumat yang diperolehi.' }
+                { id: 'KF 1', type: 'Senarai Semak', desc: 'Menunjukkan sifat ingin tahu dan minat untuk meneroka.', items: ["Bertanya soalan tentang perkara baharu", "Meneroka bahan/alat baharu", "Cuba pelbagai cara menyelesaikan sesuatu", "Menunjukkan minat terhadap aktiviti baharu", "Memerhati persekitaran dengan teliti", "Berkongsi penemuan dengan rakan/guru"] },
+                { id: 'KF 2', type: 'Skala Kadar', desc: 'Menganalisis maklumat yang diperolehi untuk mengenal pasti punca kejadian alam.' },
+                { id: 'KF 3', type: 'Skala Kadar', desc: 'Menunjukkan sifat ingin tahu dan minat untuk meneroka.' },
+                { id: 'KF 4', type: 'Skala Kadar', desc: 'Menganalisis maklumat yang diperolehi untuk mengenal pasti punca kejadian alam.' },
+                { id: 'KF 5', type: 'Senarai Semak', desc: 'Membuat hubung kait antara hasil warisan dengan kehidupan.', items: ["Kenal pasti hasil warisan dalam persekitaran", "Menyatakan ciri hasil warisan", "Membanding beza hasil warisan lama & kini", "Menghargai hasil warisan keluarga/komuniti", "Menceritakan kegunaan hasil warisan", "Menghubungkaitkan hasil warisan dengan kehidupan harian"] },
+                { id: 'KF 6', type: 'Rekod Anekdot', desc: 'Mempamerkan kemampuan menyelesaikan masalah harian berdasarkan maklumat yang diperolehi.' },
+                { id: 'KF 7', type: 'Skala Kadar', desc: 'Mengendalikan peranti digital dengan selamat dan bertanggungjawab.' }
             ],
             KE: [
-                { id: 'KE 1.1', type: 'Senarai Semak', desc: 'Menggunakan kreativiti dalam penghasilan karya seni visual.', items: ["Guna pelbagai bahan", "Mencampurkan warna", "Mencuba teknik seni (mozek/kolaj/capan)", "Menggunakan imaginasi sendiri", "Menghasilkan corak atau pola", "Kemasan hasil seni"] },
-                { id: 'KE 1.2', type: 'Skala Kadar', desc: 'Menunjukkan minat muzik dan gerakan / Melakonkan watak drama.' },
-                { id: 'KE 2.1', type: 'Rekod Anekdot', desc: 'Melakonkan watak dalam drama.' },
-                { id: 'KE 2.2', type: 'Skala Kadar', desc: 'Menunjukkan minat keboleh dalam muzik, gerakan & watak drama.' },
-                { id: 'KE 3.1', type: 'Skala Kadar', desc: 'Menunjukkan penghargaan terhadap karya seni.' }
+                { id: 'KE 1', type: 'Senarai Semak', desc: 'Menggunakan kreativiti dalam penghasilan karya seni visual.', items: ["Guna pelbagai bahan", "Mencampurkan warna", "Mencuba teknik seni (mozek/kolaj/capan)", "Menggunakan imaginasi sendiri", "Menghasilkan corak atau pola", "Kemasan hasil seni"] },
+                { id: 'KE 2', type: 'Skala Kadar', desc: 'Menunjukkan minat dan kebolehan dalam muzik dan gerakan.' },
+                { id: 'KE 3', type: 'Rekod Anekdot', desc: 'Melakonkan watak dalam drama.' },
+                { id: 'KE 4', type: 'Skala Kadar', desc: 'Menunjukkan penghargaan terhadap karya seni.' }
             ],
             PI: [
-                { id: 'PI 1.1', type: 'Senarai Semak', desc: 'Menghafaz surah terpilih Juz Amma.', items: ["Surah Al-Fatihah", "Surah Al-Ikhlas", "Surah Al-Falaq", "Surah An-Nas", "Surah Al-Kausar", "Surah Al-Asr"] },
-                { id: 'PI 1.3', type: 'Skala Kadar', desc: 'Melakukan ibadah dalam kehidupan harian.' },
-                { id: 'PI 2.1', type: 'Rekod Anekdot', desc: 'Menunjukkan cara beriman kepada Allah SWT dan Nabi Muhammad SAW.' },
-                { id: 'PI 2.2', type: 'Skala Kadar', desc: 'Mengetahui dan menunjukkan adab yang baik dalam kehidupan harian.' }
+                { id: 'PI 1', type: 'Senarai Semak', desc: 'Menghafaz surah terpilih Juz Amma.', items: ["Surah Al-Fatihah", "Surah Al-Ikhlas", "Surah Al-Falaq", "Surah An-Nas", "Surah Al-Kausar", "Surah Al-Asr"] },
+                { id: 'PI 2', type: 'Skala Kadar', desc: 'Melakukan ibadah dalam kehidupan harian.' },
+                { id: 'PI 3', type: 'Rekod Anekdot', desc: 'Menunjukkan cara beriman kepada Allah SWT dan Nabi Muhammad SAW.' },
+                { id: 'PI 4', type: 'Skala Kadar', desc: 'Mengetahui dan menunjukkan adab yang baik dalam kehidupan.' }
             ],
             FK: [
-                { id: 'FK 1.1', type: 'Senarai Semak', desc: 'Menunjukkan kecekapan dalam kemahiran motor kasar.', items: ["Jalan atas garisan lurus", "Melompat", "Berlari dengan seimbang", "Menyepak bola", "Melempar dan menyambut bola", "Aktiviti motor kasar harian"] },
-                { id: 'FK 1.2', type: 'Skala Kadar', desc: 'Mengkoordinasi dan mengawal motor halus untuk aktiviti harian lebih cekap.' },
-                { id: 'FK 1.3', type: 'Rekod Anekdot', desc: 'Sedar keselamatan diri / Jaga kebersihan / Amalan pemakanan sihat.' },
-                { id: 'FK 2.1', type: 'Skala Kadar', desc: 'Menunjukkan kecekapan motor kasar / Kebersihan diri.' },
-                { id: 'FK 2.2', type: 'Skala Kadar', desc: 'Mengkoordinasi kawalan motor halus yang tepat.' },
-                { id: 'FK 2.3', type: 'Skala Kadar', desc: 'Mengamalkan penjagaan keselamatan diri, kebersihan dan pemakanan sihat.' },
-                { id: 'FK 3.1', type: 'Skala Kadar', desc: 'Menguasai kemahiran motor kasar lanjutan.' },
-                { id: 'FK 3.2', type: 'Skala Kadar', desc: 'Menguasai kawalan motor halus yang cekap dan tepat.' }
+                { id: 'FK 1', type: 'Senarai Semak', desc: 'Menunjukkan kecekapan dalam kemahiran motor kasar yang diperlukan untuk melakukan pelbagai aktiviti harian.', items: ["Jalan atas garisan lurus", "Melompat", "Berlari dengan seimbang", "Menyepak bola", "Melempar dan menyambut bola", "Aktiviti motor kasar harian"] },
+                { id: 'FK 2', type: 'Skala Kadar', desc: 'Mengkoordinasi dan mengawal motor halus untuk melakukan aktiviti atau pergerakan dengan lebih cekap dan tepat.' },
+                { id: 'FK 3', type: 'Rekod Anekdot', desc: 'Menunjukkan kesedaran tentang penjagaan keselamatan diri dalam aktiviti harian.' },
+                { id: 'FK 4', type: 'Skala Kadar', desc: 'Menjaga kebersihan diri dan persekitaran.' },
+                { id: 'FK 5', type: 'Skala Kadar', desc: 'Mengamalkan pemakanan sihat dan selamat.' }
             ],
             SE: [
                 { id: 'SE 1', type: 'Skala Kadar', desc: 'Menunjukkan konsep kendiri yang positif dan keyakinan terhadap kebolehan sendiri.' },
                 { id: 'SE 2', type: 'Rekod Anekdot', desc: 'Mengurus emosi dan tingkah laku untuk menyesuaikan diri dalam kehidupan harian.' },
                 { id: 'SE 3', type: 'Senarai Semak', desc: 'Memahami keperluan orang lain dan dapat bekerjasama.', items: ["Berkongsi mainan", "Membantu rakan", "Sikap bertolak ansur", "Bergilir semasa bermain", "Mendengar pendapat rakan", "Menerima keputusan kumpulan"] },
                 { id: 'SE 4', type: 'Skala Kadar', desc: 'Memahami dan menunjuk penghargaan kepada kepelbagaian masyarakat di Malaysia.' }
+            ],
+            KW: [
+                { id: 'KW 1', type: 'Senarai Semak', desc: 'Mengetahui dan melaksanakan tanggungjawab terhadap keluarga.', items: ["Membantu tugasan rumah", "Menghormati ibu bapa", "Menjaga barang keluarga", "Mengikut arahan keluarga", "Bekerjasama dengan adik-beradik", "Menyayangi ahli keluarga"] },
+                { id: 'KW 2', type: 'Skala Kadar', desc: 'Mengetahui dan melaksanakan tanggungjawab terhadap komuniti.' },
+                { id: 'KW 3', type: 'Rekod Anekdot', desc: 'Mengetahui dan melaksanakan tanggungjawab terhadap negara.' }
+            ],
+            PM: [
+                { id: 'PM 1', type: 'Skala Kadar', desc: 'Mengamalkan nilai kasih sayang.' },
+                { id: 'PM 2', type: 'Senarai Semak', desc: 'Menghormati orang lain.', items: ["Menyapa dengan sopan", "Memberi laluan kepada orang lain", "Mendengar apabila orang lain bercakap", "Meminta maaf apabila bersalah", "Menghormati harta orang lain", "Bergilir semasa aktiviti"] },
+                { id: 'PM 3', type: 'Rekod Anekdot', desc: 'Bersikap jujur dalam pergaulan seharian.' },
+                { id: 'PM 4', type: 'Skala Kadar', desc: 'Mengamalkan sikap rajin dalam menyelesaikan tugasan yang diberi.' }
+            ],
+            BC: [
+                { id: 'BC 1', type: 'Rekod Anekdot', desc: '以良好的态度聆听并理解口语交流，作出适当的反应。' },
+                { id: 'BC 2', type: 'Skala Kadar', desc: '以口语参与互动，有礼貌地与人沟通。' },
+                { id: 'BC 3', type: 'Senarai Semak', desc: '能识别阅读媒介中的图像与文字，能认读和理解已学的汉字，乐于阅读。', items: ["识别图像与文字", "认读已学的汉字", "理解简单词语", "认读简单句子", "乐于阅读图书", "使用手指指读文字"] },
+                { id: 'BC 4', type: 'Skala Kadar', desc: '掌握正确的执笔方法和坐姿，按基本的笔顺规则书写汉字。' },
+                { id: 'BC 5', type: 'Rekod Anekdot', desc: '喜欢并尝试作书面表达。' }
+            ],
+            BT: [
+                { id: 'BT 1', type: 'Rekod Anekdot', desc: 'சூழலுக்கு ஏற்பச் மசவி டுத்தவற்றைப் புரிந்து மகொண்டு சரியொகத் துலங்குவர்.' },
+                { id: 'BT 2', type: 'Skala Kadar', desc: 'பல்நவறு சூழல்களில் பண்புைன் உறரயொடுவர்.' },
+                { id: 'BT 3', type: 'Senarai Semak', desc: 'வொசித்தவற்றைப் புரிந்து மகொள்வர்.', items: ["எழுத்துக்களை அறிதல்", "எழுத்துக்களை இணைத்தல்", "சொற்களை வாசித்தல்", "சொற்றொடர்களை வாசித்தல்", "வாக்கியங்களை வாசித்தல்", "படங்களைப் பார்த்து புரிந்துகொள்ளுதல்"] },
+                { id: 'BT 4', type: 'Skala Kadar', desc: 'மபொருத்த ொன முறையில் எண்ணங்கறளயும் தகவல்கறளயும் மவளிப்படுத்துவர்.' }
             ]
         };
 
         const BM_TP_DESCRIPTIONS = {
-            'BM 1.1': {
+            'BM 1': {
                 1: 'TP 1: Murid boleh mendengar dan memberikan respons secara terhad.',
                 2: 'TP 2: Murid boleh mendengar dan memberikan respons yang betul dalam situasi tertentu.',
                 3: 'TP 3: Murid boleh mendengar dan memberikan respons yang betul dalam pelbagai situasi.'
             },
-            'BM 2.1': {
+            'BM 2': {
                 1: 'TP 1: Murid boleh bertutur dengan jelas dalam situasi tertentu secara terhad.',
                 2: 'TP 2: Murid boleh bertutur dengan jelas dalam situasi tertentu.',
                 3: 'TP 3: Murid boleh bertutur dengan jelas dan sopan dalam pelbagai situasi.'
             },
-            'BM 3.2': {
+            'BM 3': {
                 1: 'TP 1: Murid boleh membaca perkataan dengan bantuan simbol atau gambar.',
                 2: 'TP 2: Murid boleh membaca dan memahami frasa.',
                 3: 'TP 3: Murid boleh membaca dan memahami ayat mudah.'
             },
-            'BM 4.2': {
+            'BM 4': {
                 1: 'TP 1: Murid boleh menyampaikan idea dengan menggunakan simbol atau lukisan.',
                 2: 'TP 2: Murid boleh menyampaikan idea dengan menggunakan gabungan simbol, lukisan, perkataan dan frasa.',
                 3: 'TP 3: Murid boleh menyampaikan idea dengan menggunakan gabungan simbol, lukisan, perkataan, frasa dan ayat mudah.'
@@ -1523,22 +1563,22 @@ function doPost(e) {
         };
 
         const BI_TP_DESCRIPTIONS = {
-            'BI 1.1': {
+            'BI 1': {
                 1: 'TP 1: Recognise and respond to familiar sounds, words, phrases, sentences, and signs with visuals or gestures.',
                 2: 'TP 2: Understand and respond to simple phrases, statements, requests, instructions and questions.',
                 3: 'TP 3: Understand and identify specific information in simple descriptions of routines, events or stories.'
             },
-            'BI 2.1': {
+            'BI 2': {
                 1: 'TP 1: Understand simple instructions and respond politely with guidance.',
                 2: 'TP 2: Understand, respond and use suitable expressions politely with limited prompting.',
                 3: 'TP 3: Understand, respond and participate in daily conversations politely.'
             },
-            'BI 3.2': {
+            'BI 3': {
                 1: 'TP 1: Read and sound out words with prompting.',
                 2: 'TP 2: Read and understand familiar words and phrases.',
                 3: 'TP 3: Read and understand words, phrases and simple sentences.'
             },
-            'BI 4.2': {
+            'BI 4': {
                 1: 'TP 1: Express thoughts or information using symbols or drawings.',
                 2: 'TP 2: Using a combination of symbols, drawings, words and phrases.',
                 3: 'TP 3: Using an appropriate combination including simple sentences.'
@@ -1546,37 +1586,37 @@ function doPost(e) {
         };
 
         const KF_TP_DESCRIPTIONS = {
-            'KF 1.1': {
-                1: 'TP 1: Murid boleh mengelaskan maklumat dalam persekitaran berdasarkan ciri-ciri tertentu.',
-                2: 'TP 2: Murid boleh membanding beza dan membuat urutan berdasarkan ciri-ciri tertentu.',
-                3: 'TP 3: Murid boleh menyusun maklumat dan boleh memerihalkan pengelasan tersebut.'
-            },
-            'KF 2.1': {
-                1: 'TP 1: Murid boleh membilang objek.',
-                2: 'TP 2: Murid boleh menyatakan bilangan dari gabungan dua himpunan atau baki apabila objek dikeluarkan.',
-                3: 'TP 3: Murid boleh menyelesaikan operasi tambah dan tolak dalam situasi harian.'
-            },
-            'KF 1.2': {
+            'KF 1': {
                 1: 'TP 1: Murid boleh bertanya soalan tentang perkara baharu yang diminati.',
                 2: 'TP 2: Murid boleh bertanya soalan dan berani mencuba perkara baharu.',
                 3: 'TP 3: Murid boleh bertanya soalan serta mencuba pelbagai cara dan bahan untuk mencari jawapan.'
             },
-            'KF 2.2': {
+            'KF 3': {
+                1: 'TP 1: Murid boleh bertanya soalan tentang perkara baharu yang diminati.',
+                2: 'TP 2: Murid boleh bertanya soalan dan berani mencuba perkara baharu.',
+                3: 'TP 3: Murid boleh bertanya soalan serta mencuba pelbagai cara dan bahan untuk mencari jawapan.'
+            },
+            'KF 2': {
                 1: 'TP 1: Murid boleh memerhati dan menyatakan kejadian alam.',
                 2: 'TP 2: Murid boleh memerhati dan menyatakan faktor penyebab kejadian alam.',
                 3: 'TP 3: Murid boleh memahami fenomena alam dan menjelaskan punca kejadian alam.'
             },
-            'KF 1.3': {
+            'KF 4': {
+                1: 'TP 1: Murid boleh memerhati dan menyatakan kejadian alam.',
+                2: 'TP 2: Murid boleh memerhati dan menyatakan faktor penyebab kejadian alam.',
+                3: 'TP 3: Murid boleh memahami fenomena alam dan menjelaskan punca kejadian alam.'
+            },
+            'KF 5': {
                 1: 'TP 1: Murid boleh memerhati dan menyatakan ciri-ciri hasil warisan dalam persekitaran.',
                 2: 'TP 2: Murid boleh membanding beza ciri-ciri hasil warisan dalam persekitaran.',
                 3: 'TP 3: Murid boleh menjelaskan hubung kait antara ciri-ciri hasil warisan dengan kehidupan.'
             },
-            'KF 3.1': {
+            'KF 6': {
                 1: 'TP 1: Murid boleh mencetus idea untuk menyelesaikan masalah tertentu.',
                 2: 'TP 2: Murid boleh menyelesaikan masalah dalam tugasan pembelajaran.',
                 3: 'TP 3: Murid boleh menyelesaikan masalah harian secara bekerjasama dengan orang lain.'
             },
-            'KF 2.3': {
+            'KF 7': {
                 1: 'TP 1: Murid boleh menamakan peranti digital yang terdapat di persekitaran.',
                 2: 'TP 2: Murid boleh menjelaskan cara menggunakan peranti digital dengan selamat.',
                 3: 'TP 3: Murid boleh menggunakan peranti digital untuk mengumpul dan mengurus maklumat dengan selamat serta bertanggungjawab.'
@@ -1584,22 +1624,22 @@ function doPost(e) {
         };
 
         const KE_TP_DESCRIPTIONS = {
-            'KE 1.1': {
+            'KE 1': {
                 1: 'TP 1: Murid boleh menghasilkan karya seni visual melalui peniruan.',
                 2: 'TP 2: Murid boleh menghasilkan karya seni visual dengan bimbingan.',
                 3: 'TP 3: Murid boleh menghasilkan karya seni visual secara kreatif.'
             },
-            'KE 1.2': {
+            'KE 2': {
                 1: 'TP 1: Murid boleh melibatkan diri tetapi tidak menunjukkan minat dan kebolehan.',
                 2: 'TP 2: Murid boleh menunjukkan minat tetapi kurang berkebolehan.',
                 3: 'TP 3: Murid boleh menunjukkan minat dan kebolehan dalam muzik dan pergerakan.'
             },
-            'KE 2.1': {
+            'KE 3': {
                 1: 'TP 1: Murid boleh meniru watak dalam lakonan.',
                 2: 'TP 2: Murid boleh melakonkan pelbagai watak dengan bimbingan.',
                 3: 'TP 3: Murid boleh melakonkan pelbagai watak secara kreatif.'
             },
-            'KE 3.1': {
+            'KE 4': {
                 1: 'TP 1: Murid boleh bercerita tentang hasil kerja sendiri.',
                 2: 'TP 2: Murid boleh menyatakan pandangan terhadap karya seni sendiri dan orang lain dengan rangsangan.',
                 3: 'TP 3: Murid boleh memberikan ulasan tentang karya seni sendiri serta orang lain dengan yakin.'
@@ -1607,22 +1647,22 @@ function doPost(e) {
         };
 
         const PI_TP_DESCRIPTIONS = {
-            'PI 1.1': {
+            'PI 1': {
                 1: 'TP 1: Murid boleh mengulang bacaan surah terpilih Juz Amma mengikut guru.',
                 2: 'TP 2: Murid boleh menghafaz surah terpilih daripada Juz Amma tetapi tidak lancar.',
                 3: 'TP 3: Murid boleh menghafaz surah terpilih daripada Juz Amma dengan betul dan lancar.'
             },
-            'PI 1.3': {
+            'PI 2': {
                 1: 'TP 1: Murid boleh melakukan wuduk dan perlakuan solat dengan bimbingan.',
                 2: 'TP 2: Murid boleh melakukan wuduk dan perlakuan solat dengan betul.',
                 3: 'TP 3: Murid boleh melakukan wuduk dan perlakuan solat dengan betul dan tertib.'
             },
-            'PI 2.1': {
+            'PI 3': {
                 1: 'TP 1: Murid boleh melafazkan dua kalimah syahadah mengikut guru.',
                 2: 'TP 2: Murid boleh melafazkan dua kalimah syahadah tetapi tidak lancar.',
                 3: 'TP 3: Murid boleh melafazkan dua kalimah syahadah dengan betul dan lancar.'
             },
-            'PI 2.2': {
+            'PI 4': {
                 1: 'TP 1: Murid boleh menyatakan contoh adab yang baik dalam kehidupan harian.',
                 2: 'TP 2: Murid boleh menunjukkan adab baik dalam kehidupan harian dengan rangsangan yang sesuai.',
                 3: 'TP 3: Murid boleh menunjukkan adab baik dalam kehidupan harian.'
@@ -1653,34 +1693,53 @@ function doPost(e) {
         };
 
         const FK_TP_DESCRIPTIONS = {
-            'FK 1.1': {
+            'FK 1': {
                 1: 'TP 1: Murid boleh melaksanakan aktiviti pergerakan badan, kurang tangkas dan tidak terkawal.',
                 2: 'TP 2: Murid boleh melaksanakan aktiviti pergerakan badan, kurang tangkas tetapi terkawal.',
                 3: 'TP 3: Murid boleh melaksanakan aktiviti yang melibatkan pergerakan badan dengan tangkas dan terkawal.'
             },
-            'FK 1.2': {
+            'FK 2': {
                 1: 'TP 1: Murid boleh melakukan koordinasi mata dengan tangan dan kawalan motor halus dengan bimbingan.',
                 2: 'TP 2: Murid boleh melakukan koordinasi mata dengan tangan dan kawalan motor halus dalam aktiviti harian yang mudah.',
                 3: 'TP 3: Murid boleh melakukan koordinasi mata dengan tangan dan kawalan pergerakan dengan cekap dalam aktiviti harian yang kompleks.'
             },
-            'FK 1.3': {
+            'FK 3': {
                 1: 'TP 1: Murid boleh mengelakkan diri daripada situasi berbahaya dengan bimbingan.',
                 2: 'TP 2: Murid boleh mengenal situasi berbahaya dan mengambil tindakan untuk mengelakkan situasi berbahaya.',
                 3: 'TP 3: Murid boleh mengenal situasi berbahaya dan kemungkinan terjadinya situasi yang berbahaya serta mengambil tindakan mengelak untuk diri dan orang lain.'
             },
-            'FK 2.1': {
+            'FK 4': {
                 1: 'TP 1: Murid boleh mengurus kebersihan diri dan menjaga kebersihan persekitaran dengan bimbingan.',
                 2: 'TP 2: Murid boleh mengurus kebersihan diri dan menjaga kebersihan persekitaran tetapi masih kurang menyeluruh.',
                 3: 'TP 3: Murid boleh mengurus kebersihan diri dan menjaga kebersihan persekitaran dalam kehidupan harian.'
             },
-            'FK 2.3': {
+            'FK 5': {
                 1: 'TP 1: Murid boleh memilih makanan dan minuman yang sihat dan selamat.',
                 2: 'TP 2: Murid boleh mengamalkan pemakanan sihat dan selamat dengan bimbingan.',
                 3: 'TP 3: Murid boleh mengamalkan pemakanan sihat dan selamat.'
             }
         };
 
+        const KW_TP_DESCRIPTIONS = {
+            'KW 1': {
+                1: 'TP 1: Murid boleh menyatakan tanggungjawab terhadap keluarga.',
+                2: 'TP 2: Murid boleh melaksanakan tanggungjawab terhadap keluarga dengan rangsangan yang sesuai.',
+                3: 'TP 3: Murid boleh melaksanakan tanggungjawab terhadap keluarga.'
+            },
+            'KW 2': {
+                1: 'TP 1: Murid boleh menyatakan cara menjaga kemudahan awam dan cara menghormati warga setempat.',
+                2: 'TP 2: Murid boleh menggunakan kemudahan awam dengan bertanggungjawab dan menghormati warga setempat dengan bimbingan.',
+                3: 'TP 3: Murid boleh menggunakan kemudahan awam dengan bertanggungjawab dan menghormati warga setempat.'
+            },
+            'KW 3': {
+                1: 'TP 1: Murid boleh menyatakan tanggungjawab terhadap negara.',
+                2: 'TP 2: Murid boleh menunjukkan sikap menghormati lambang dan identiti negara dengan rangsangan yang sesuai.',
+                3: 'TP 3: Murid boleh menunjukkan sikap menghormati lambang dan identiti negara dalam pelbagai situasi.'
+            }
+        };
+
         let mockRecords = [];
+        let TAUGHT_SUBJECTS = [];
         let records = [];
         let activeTab = 'dashboard';
         let dashboardBidangFilter = 'ALL';
@@ -1690,6 +1749,48 @@ function doPost(e) {
         let selectedFileBase64 = '';
         let selectedFileType = '';
         let selectedFileName = '';
+
+        function renderSubjectChecklist() {
+            const container = document.getElementById('subject-checklist-container');
+            if (!container) return;
+            container.innerHTML = Object.keys(SUBJECT_NAMES).map(code => {
+                const checked = TAUGHT_SUBJECTS.includes(code) ? 'checked' : '';
+                return `<label class="flex items-center gap-2.5 bg-slate-50 border border-slate-200 rounded-xl p-3.5 cursor-pointer hover:bg-slate-100 transition-all">
+                    <input type="checkbox" class="subject-checkbox w-4 h-4 rounded accent-blue-600" value="${code}" ${checked} />
+                    <span class="text-[11px] font-bold text-slate-700">${code} &bull; ${SUBJECT_NAMES[code]}</span>
+                </label>`;
+            }).join('');
+        }
+
+        function saveTaughtSubjects() {
+            const checkboxes = document.querySelectorAll('.subject-checkbox');
+            const selected = [];
+            checkboxes.forEach(cb => { if (cb.checked) selected.push(cb.value); });
+            TAUGHT_SUBJECTS = selected;
+            localStorage.setItem('template_taught_subjects', JSON.stringify(TAUGHT_SUBJECTS));
+            filterSubjectDropdownByTaught();
+            showToast('Subjek diajar berjaya disimpan!', 'success');
+        }
+
+        function filterSubjectDropdownByTaught() {
+            const select = document.getElementById('form-subject-select');
+            if (!select) return;
+            const options = select.querySelectorAll('option');
+            options.forEach(opt => {
+                if (TAUGHT_SUBJECTS.length === 0 || TAUGHT_SUBJECTS.includes(opt.value)) {
+                    opt.style.display = '';
+                } else {
+                    opt.style.display = 'none';
+                }
+            });
+            if (select.selectedOptions[0] && select.selectedOptions[0].style.display === 'none') {
+                const firstVisible = Array.from(options).find(opt => opt.style.display !== 'none');
+                if (firstVisible) {
+                    select.value = firstVisible.value;
+                    onFormSubjectChange();
+                }
+            }
+        }
 
         function saveTemplateSettings() {
             const schoolName = document.getElementById('setup-school-name').value.trim() || "PRASEKOLAH PINTAR";
@@ -1853,17 +1954,23 @@ function doPost(e) {
             const savedTeacher = localStorage.getItem('template_teacher_name');
             const savedYear = localStorage.getItem('academic_year');
             const savedClass = localStorage.getItem('template_class_name');
+            const savedSubjects = localStorage.getItem('template_taught_subjects');
 
             if (savedSchool) SCHOOL_NAME = savedSchool;
             if (savedTeacher) TEACHER_NAME = savedTeacher;
             if (savedYear) ACADEMIC_YEAR = savedYear;
             if (savedClass) CLASS_NAME = savedClass;
+            if (savedSubjects) {
+                try { TAUGHT_SUBJECTS = JSON.parse(savedSubjects) || []; } catch (e) { TAUGHT_SUBJECTS = []; }
+            }
 
             document.getElementById('setup-school-name').value = SCHOOL_NAME;
             document.getElementById('setup-teacher-name').value = TEACHER_NAME;
             document.getElementById('setup-academic-year').value = ACADEMIC_YEAR;
             document.getElementById('setup-class-name').value = CLASS_NAME;
 
+            renderSubjectChecklist();
+            filterSubjectDropdownByTaught();
             updateHeaderDisplay();
         }
 
@@ -2077,7 +2184,7 @@ function doPost(e) {
                 box.classList.remove('hidden');
                 box.className = "bg-slate-50 p-6 rounded-2xl border border-slate-200/85 shadow-sm space-y-3";
                 let html = `<h3 class="text-[10px] font-extrabold uppercase text-slate-500 tracking-wider">Status Pencapaian Semasa: ${student}</h3><div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-h-[220px] overflow-y-auto">`;
-                Object.keys(COMPONENTS).forEach(sub => {
+                Object.keys(COMPONENTS).filter(sub => TAUGHT_SUBJECTS.length === 0 || TAUGHT_SUBJECTS.includes(sub)).forEach(sub => {
                     const subR = records.filter(r => r.studentName === student && r.subject === sub);
                     html += `<div class="bg-white p-4 rounded-xl border border-slate-150 text-[10px]"><span class="font-bold text-slate-950">${SUBJECT_NAMES[sub] || sub}</span><br><span class="text-slate-500 font-semibold">${subR.length}/${COMPONENTS[sub].length} Dinilai</span></div>`;
                 });
@@ -2131,7 +2238,7 @@ function doPost(e) {
                     html += '</div>';
                 }
                 let tpOptionsHtml;
-                const tpDescMaps = { BM: BM_TP_DESCRIPTIONS, BI: BI_TP_DESCRIPTIONS, KF: KF_TP_DESCRIPTIONS, KE: KE_TP_DESCRIPTIONS, PI: PI_TP_DESCRIPTIONS, SE: SE_TP_DESCRIPTIONS, FK: FK_TP_DESCRIPTIONS };
+                const tpDescMaps = { BM: BM_TP_DESCRIPTIONS, BI: BI_TP_DESCRIPTIONS, KF: KF_TP_DESCRIPTIONS, KE: KE_TP_DESCRIPTIONS, PI: PI_TP_DESCRIPTIONS, SE: SE_TP_DESCRIPTIONS, FK: FK_TP_DESCRIPTIONS, KW: KW_TP_DESCRIPTIONS };
                 if (tpDescMaps[sub] && tpDescMaps[sub][cid]) {
                     const tpDesc = tpDescMaps[sub][cid];
                     tpOptionsHtml = `<option value="1">${tpDesc[1]}</option><option value="2">${tpDesc[2]}</option><option value="3">${tpDesc[3]}</option>`;
@@ -2329,13 +2436,6 @@ function doPost(e) {
                 subs.forEach(s => {
                     let html = `<div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm print-card-break premium-card mb-6">
                         <h3 class="font-bold text-xs uppercase tracking-wider mb-4 text-[#0B1528] flex items-center gap-2"><i class="fas fa-bookmark" class="w-4 h-4 text-blue-600"></i>Bidang Pentaksiran: ${s} &bull; ${SUBJECT_NAMES[s]}</h3>
-                        <details class="mb-4 bg-slate-50 rounded-xl border border-slate-200 group cursor-pointer no-print">
-                            <summary class="font-bold text-[11px] text-slate-700 p-4 flex items-center justify-between uppercase tracking-wide">
-                                <span><i class="fas fa-info-circle mr-2 text-blue-500"></i>Ringkasan Bidang</span>
-                                <i class="fas fa-chevron-down w-3.5 h-3.5 text-slate-400 group-open:rotate-180 transition"></i>
-                            </summary>
-                            <p class="text-xs text-slate-600 leading-relaxed px-4 pb-4">${BIDANG_RINGKASAN[s] || 'Ringkasan tidak tersedia bagi bidang ini.'}</p>
-                        </details>
                         <div class="grid grid-cols-3 gap-4">`;
                     
                     [1, 2, 3].forEach(tp => {
@@ -2434,7 +2534,7 @@ function doPost(e) {
             let detList = document.getElementById('cert-detailed-records');
             if (detList) {
                 detList.innerHTML = '';
-                const allR = records.filter(r => r.studentName === st);
+                const allR = records.filter(r => r.studentName === st && (TAUGHT_SUBJECTS.length === 0 || TAUGHT_SUBJECTS.includes(r.subject)));
                 if (allR.length === 0) {
                     detList.innerHTML = '<p class="text-xs text-slate-400 py-8 italic">Tiada rekod untuk murid ini.</p>';
                     safeSetText('cert-intervensi-text', "Tiada rekod penilaian.");
@@ -2871,15 +2971,16 @@ function doPost(e) {
             let printHTML = '';
             
             if (currentPrintTarget === 'analytics') {
-                let totalR = records.length;
+                const printRecords = TAUGHT_SUBJECTS.length === 0 ? records : records.filter(r => TAUGHT_SUBJECTS.includes(r.subject));
+                let totalR = printRecords.length;
                 let t1 = 0, t2 = 0, t3 = 0;
-                records.forEach(r => {
+                printRecords.forEach(r => {
                     if (r.tp === 1) t1++;
                     if (r.tp === 2) t2++;
                     if (r.tp === 3) t3++;
                 });
                 
-                let sumTp = records.reduce((acc, r) => acc + r.tp, 0);
+                let sumTp = printRecords.reduce((acc, r) => acc + r.tp, 0);
                 let avgTpVal = totalR > 0 ? (sumTp / totalR).toFixed(1) : '0';
                 
                 printHTML = `
@@ -2972,16 +3073,19 @@ function doPost(e) {
         function renderAnalytics() {
             // Guard against missing data
             if (!records || !COMPONENTS || !STUDENTS) return;
-            
+
+            // Scope all analytics to taught subjects only (if configured in Tetapan)
+            const filteredRecords = TAUGHT_SUBJECTS.length === 0 ? records : records.filter(r => TAUGHT_SUBJECTS.includes(r.subject));
+
             // Calculate statistics
             let tp1Count = 0, tp2Count = 0, tp3Count = 0;
-            records.forEach(r => {
+            filteredRecords.forEach(r => {
                 if (r.tp === 1) tp1Count++;
                 if (r.tp === 2) tp2Count++;
                 if (r.tp === 3) tp3Count++;
             });
 
-            const modeTP = calculateModeTP(records.map(r => r.tp));
+            const modeTP = calculateModeTP(filteredRecords.map(r => r.tp));
             
             safeSetText('analytics-avg-tp', modeTP);
             safeSetText('analytics-tp1-count', tp1Count);
@@ -2991,8 +3095,8 @@ function doPost(e) {
             const subjectBreakdown = document.getElementById('analytics-subject-breakdown');
             if (subjectBreakdown) {
                 subjectBreakdown.innerHTML = '';
-                Object.keys(COMPONENTS).forEach(sub => {
-                    const subRecords = records.filter(r => r.subject === sub);
+                Object.keys(COMPONENTS).filter(sub => TAUGHT_SUBJECTS.length === 0 || TAUGHT_SUBJECTS.includes(sub)).forEach(sub => {
+                    const subRecords = filteredRecords.filter(r => r.subject === sub);
                     const subMode = calculateModeTP(subRecords.map(r => r.tp));
                     const tp3Sub = subRecords.filter(r => r.tp === 3).length;
                     
@@ -3017,8 +3121,8 @@ function doPost(e) {
                 
                 STUDENTS.forEach(student => {
                     let tp1SubjectCount = 0;
-                    Object.keys(COMPONENTS).forEach(sub => {
-                        const avg = calculateAverageTP(records, student, sub);
+                    Object.keys(COMPONENTS).filter(sub => TAUGHT_SUBJECTS.length === 0 || TAUGHT_SUBJECTS.includes(sub)).forEach(sub => {
+                        const avg = calculateAverageTP(filteredRecords, student, sub);
                         if (avg === 1) tp1SubjectCount++;
                     });
                     if (tp1SubjectCount > 0) {
@@ -3039,17 +3143,17 @@ function doPost(e) {
                 }
             }
 
-            // 3M Foundation Support (Membaca, Menulis, Mengira) - KP2027 alignment
+            // 3M Foundation Support (Membaca, Menulis, Mengira) - KP2026 alignment
             const threeMGroups = document.getElementById('analytics-3m-groups');
             const threeMActionPlan = document.getElementById('analytics-3m-action-plan');
             if (threeMGroups) {
-                const readingComponents = ['BM 3.2', 'BI 3.2'];
-                const writingComponents = ['BM 4.2', 'BI 4.2'];
+                const readingComponents = ['BM 3', 'BI 3'];
+                const writingComponents = ['BM 4', 'BI 4'];
                 const countingComponents = ['KF 2.1'];
 
                 const getStudentsNeedingSupport = (compIds) => {
                     const names = new Set();
-                    records.forEach(r => {
+                    filteredRecords.forEach(r => {
                         if (compIds.includes(r.componentId) && r.tp <= 2) names.add(r.studentName);
                     });
                     return Array.from(names);
@@ -3075,7 +3179,7 @@ function doPost(e) {
 
                 if (threeMActionPlan) {
                     threeMActionPlan.innerHTML = `
-                        <p>Selaras dengan garis panduan Kurikulum Persekolahan 2027 (KP2027) bagi membasmi keciciran pembelajaran seawal prasekolah:</p>
+                        <p>Selaras dengan garis panduan Kurikulum Persekolahan 2026 (KP2026) bagi membasmi keciciran pembelajaran seawal prasekolah:</p>
                         <ol class="list-decimal list-inside space-y-1.5 mt-2 pl-1">
                             <li>Kenal pasti murid berisiko melalui pentaksiran berterusan.</li>
                             <li>Laksanakan sesi pemulihan awal secara kumpulan kecil atau individu bagi kemahiran 3M yang lemah.</li>
