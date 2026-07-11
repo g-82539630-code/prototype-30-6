@@ -142,26 +142,23 @@
                     <button onclick="switchTab('kp2027')" id="tab-kp2027" class="nav-tab flex items-center justify-center px-5 py-3 text-xs font-semibold rounded-xl whitespace-nowrap transition-all duration-300 text-slate-300 hover:text-white hover:bg-slate-800/70">
                         <i class="fas fa-graduation-cap mr-2"></i> Panduan Kurikulum Prasekolah
                     </button>
-                    <button onclick="switchTab('dashboard')" id="tab-dashboard" class="nav-tab flex items-center justify-center px-5 py-3 text-xs font-bold rounded-xl whitespace-nowrap transition-all duration-300 bg-white text-[#0B1528] shadow-md hover:shadow-lg">
-                        <i class="fas fa-chart-line mr-2"></i> Ringkasan Laporan
-                    </button>
                     <button onclick="switchTab('penilaian')" id="tab-penilaian" class="nav-tab flex items-center justify-center px-5 py-3 text-xs font-semibold rounded-xl whitespace-nowrap transition-all duration-300 text-slate-300 hover:text-white hover:bg-slate-800/70">
                         <i class="fas fa-file-alt mr-2"></i> Pengisian Pentaksiran
                     </button>
                     <button onclick="switchTab('pelaporan')" id="tab-pelaporan" class="nav-tab flex items-center justify-center px-5 py-3 text-xs font-semibold rounded-xl whitespace-nowrap transition-all duration-300 text-slate-300 hover:text-white hover:bg-slate-800/70">
                         <i class="fas fa-award mr-2"></i> Transkrip Murid
                     </button>
-                    <button onclick="switchTab('senarai')" id="tab-senarai" class="nav-tab flex items-center justify-center px-5 py-3 text-xs font-semibold rounded-xl whitespace-nowrap transition-all duration-300 text-slate-300 hover:text-white hover:bg-slate-800/70">
-                        <i class="fas fa-archive mr-2"></i> Arkib (<span id="log-count-badge" class="font-extrabold text-sky-400 bg-sky-950/80 px-2 py-0.5 rounded-md border border-sky-900/50">0</span>)
+                    <button onclick="switchTab('dashboard')" id="tab-dashboard" class="nav-tab flex items-center justify-center px-5 py-3 text-xs font-bold rounded-xl whitespace-nowrap transition-all duration-300 bg-white text-[#0B1528] shadow-md hover:shadow-lg">
+                        <i class="fas fa-chart-line mr-2"></i> Analisis Tahap Penguasaan
                     </button>
                     <button onclick="switchTab('setup')" id="tab-setup" class="nav-tab flex items-center justify-center px-5 py-3 text-xs font-semibold rounded-xl whitespace-nowrap transition-all duration-300 text-slate-300 hover:text-white hover:bg-slate-800/70">
                         <i class="fas fa-cog mr-2"></i> Tetapan
                     </button>
-                    <button onclick="switchTab('analytics')" id="tab-analytics" class="nav-tab flex items-center justify-center px-5 py-3 text-xs font-semibold rounded-xl whitespace-nowrap transition-all duration-300 text-slate-300 hover:text-white hover:bg-slate-800/70">
-                        <i class="fas fa-chart-bar mr-2"></i> Analisis Data
-                    </button>
                     <button onclick="switchTab('help')" id="tab-help" class="nav-tab flex items-center justify-center px-5 py-3 text-xs font-semibold rounded-xl whitespace-nowrap transition-all duration-300 text-slate-300 hover:text-white hover:bg-slate-800/70">
                         <i class="fas fa-question-circle mr-2"></i> Bantuan
+                    </button>
+                    <button onclick="switchTab('senarai')" id="tab-senarai" class="nav-tab flex items-center justify-center px-5 py-3 text-xs font-semibold rounded-xl whitespace-nowrap transition-all duration-300 text-slate-300 hover:text-white hover:bg-slate-800/70">
+                        <i class="fas fa-archive mr-2"></i> Arkib (<span id="log-count-badge" class="font-extrabold text-sky-400 bg-sky-950/80 px-2 py-0.5 rounded-md border border-sky-900/50">0</span>)
                     </button>
                     <button onclick="logoutUser()" id="tab-logout" class="nav-tab flex items-center justify-center px-5 py-3 text-xs font-semibold rounded-xl whitespace-nowrap transition-all duration-300 text-slate-300 hover:text-white hover:bg-red-900/50">
                         <i class="fas fa-sign-out-alt mr-2"></i> Keluar
@@ -181,6 +178,22 @@
                     Tetapan Template Pentaksiran
                 </h2>
                 <p class="text-sm text-sky-100 mt-2">Sesuaikan maklumat sekolah, guru, dan senarai murid anda di sini. Semua data disimpan secara otomatis di dalam peranti anda.</p>
+            </div>
+
+            <!-- PANDUAN PENGGUNAAN -->
+            <div class="bg-sky-50 border border-sky-200 rounded-3xl p-8 space-y-4">
+                <h3 class="text-sm font-extrabold text-sky-950 uppercase tracking-wider flex items-center gap-2">
+                    <i class="fas fa-lightbulb" class="w-5 h-5 text-sky-600"></i>Panduan Bermula
+                </h3>
+                <ol class="space-y-2.5 text-xs text-sky-900 list-decimal list-inside leading-relaxed">
+                    <li><strong>Lengkapkan Maklumat Sekolah:</strong> Masukkan nama sekolah, nama guru, dan tahun akademik anda.</li>
+                    <li><strong>Pilih Subjek Diajar:</strong> Tandakan subjek yang anda ajar di kad "Tetapan Subjek Diajar" supaya hanya subjek berkenaan dipaparkan di seluruh portal.</li>
+                    <li><strong>Tambah Senarai Murid:</strong> Masukkan semua nama murid dalam kelas anda satu per satu.</li>
+                    <li><strong>Pilih Tab "Pengisian Pentaksiran":</strong> Mulai merekod penilaian harian murid mengikut komponen.</li>
+                    <li><strong>Lihat Analisis:</strong> Tab "Analisis Tahap Penguasaan" menunjukkan statistik dan pencapaian murid secara keseluruhan.</li>
+                    <li><strong>Cetak Laporan Rasmi:</strong> Gunakan tab "Transkrip Murid" untuk menghasilkan sijil dan laporan individu.</li>
+                    <li><strong>Simpan & Backup:</strong> Semua data disimpan di peranti anda. Saran: Eksport data secara berkala untuk backup.</li>
+                </ol>
             </div>
 
             <!-- MAKLUMAT SEKOLAH & GURU -->
@@ -290,21 +303,6 @@
                         <input type="file" id="import-csv-input" accept=".csv" class="hidden" onchange="importStudentList(event)" />
                     </div>
                 </div>
-            </div>
-
-            <!-- PANDUAN PENGGUNAAN -->
-            <div class="bg-sky-50 border border-sky-200 rounded-3xl p-8 space-y-4">
-                <h3 class="text-sm font-extrabold text-sky-950 uppercase tracking-wider flex items-center gap-2">
-                    <i class="fas fa-lightbulb" class="w-5 h-5 text-sky-600"></i>Panduan Bermula
-                </h3>
-                <ol class="space-y-2.5 text-xs text-sky-900 list-decimal list-inside leading-relaxed">
-                    <li><strong>Lengkapkan Maklumat Sekolah:</strong> Masukkan nama sekolah, nama guru, dan tahun akademik anda.</li>
-                    <li><strong>Tambah Senarai Murid:</strong> Masukkan semua nama murid dalam kelas anda satu per satu.</li>
-                    <li><strong>Pilih Tab "Pengisian Pentaksiran":</strong> Mulai merekod penilaian harian murid mengikut komponen.</li>
-                    <li><strong>Lihat Analisis:</strong> Tab "Ringkasan Laporan" menunjukkan statistik dan pencapaian murid secara keseluruhan.</li>
-                    <li><strong>Cetak Laporan Rasmi:</strong> Gunakan tab "Transkrip Murid" untuk menghasilkan sijil dan laporan individu.</li>
-                    <li><strong>Simpan & Backup:</strong> Semua data disimpan di peranti anda. Saran: Eksport data secara berkala untuk backup.</li>
-                </ol>
             </div>
 
             <!-- DATA BACKUP & RESTORE (Feature 4) -->
@@ -473,7 +471,7 @@
                             <p>Bidang ini menekankan penghayatan ajaran agama (Pendidikan Islam), pengamalan nilai murni dalam kehidupan (Pendidikan Moral), dan pelaksanaan peranan sebagai warganegara yang bertanggungjawab (Pendidikan Kewarganegaraan).</p>
                             <p class="font-bold text-orange-900 mt-2">Perkara yang Perlu Dikuasai Murid:</p>
                             <ul class="list-disc list-inside space-y-1 pl-1">
-                                <li><strong>Pendidikan Islam:</strong> Menguasai asas Al-Quran dan tulisan jawi, memahami Rukun Iman/Islam, serta mengamalkan adab dan ibadah harian seperti wuduk dan solat.</li>
+                                <li><strong>Pendidikan Islam:</strong> Menguasai kemahiran asas Al-Quran dan tulisan jawi, memahami Rukun Iman/Islam, serta mengamalkan adab dan ibadah harian seperti wuduk dan solat.</li>
                                 <li><strong>Pendidikan Moral:</strong> Mengetahui dan mengamalkan nilai murni terhadap diri sendiri, orang lain, dan alam sekitar seperti kejujuran, kasih sayang, dan kerajinan.</li>
                                 <li><strong>Pendidikan Kewarganegaraan:</strong> Memahami hak dan tanggungjawab terhadap diri, keluarga, dan komuniti, serta mengenali identiti dan lambang negara Malaysia.</li>
                             </ul>
@@ -506,6 +504,28 @@
                                     <li><strong>Speaking:</strong> Use simple words and sentences to express feelings or ideas, and engage politely in daily conversations.</li>
                                     <li><strong>Reading:</strong> Identify features of a book, understand illustrations, recognise phonic sounds (initial, medial, final sounds), and read high-frequency words and simple sentences.</li>
                                     <li><strong>Writing:</strong> Show good fine motor control using writing tools, write the letters of the alphabet, and copy words and sentences in clear handwriting.</li>
+                                </ul>
+                            </div>
+                            <div class="pt-2 border-t border-blue-200">
+                                <p class="font-black text-blue-950">华语 (Bahasa Cina)</p>
+                                <p class="mt-1">学前教育的华语课程不仅是语言启蒙，更是认知发展、文化传承和社交能力培养的重要载体，为学生的终身学习奠定基础。教师应创设自由、轻松、愉悦的语言环境，激发学生表达的意愿，并引导学生逐步掌握"聆听、说话、阅读、书写"四项基本技能。</p>
+                                <p class="font-bold text-blue-900 mt-2">学生需掌握的事项：</p>
+                                <ul class="list-disc list-inside space-y-1 pl-1">
+                                    <li><strong>聆听：</strong> 能够专注地聆听并理解日常对话、简单的口语指示与问候语。学生也需学会听辨基本语言特色，如中文的声调、节奏和韵律。</li>
+                                    <li><strong>说话：</strong> 能够在口语互动中恰当地使用礼貌用语，不随意打断他人。学生需学习组织语言，用简单的句子表达需求、分享个人经历或复述故事。</li>
+                                    <li><strong>阅读：</strong> 认识图书的基本组成部分（如封面、作者）并掌握正确的翻阅技巧。学生需理解生活环境中的图像符号，认读自己的名字、基本部首及常用汉字，并初步体验阅读绘本的乐趣。</li>
+                                    <li><strong>书写：</strong> 培养正确的握笔姿势和坐姿，并准确运用手眼协调能力进行书写。学生需认识基本运笔原则和汉字笔顺，学习通过图文方式记录感受与想象。</li>
+                                </ul>
+                            </div>
+                            <div class="pt-2 border-t border-blue-200">
+                                <p class="font-black text-blue-950">தமிழ்மொழி (Bahasa Tamil)</p>
+                                <p class="mt-1">தமிழ்மொழி உப துறை, மாணவர்களிடையே அடிப்படை மொழி அறிவையும் திறன்களையும் வளர்ப்பதை நோக்கமாகக் கொண்டுள்ளது. இது கேட்டல், வாசித்தல், பேச்சு, மற்றும் எழுத்து ஆகிய நான்கு அடிப்படைத் திறன்களையும் உள்ளடக்கியது. இத்திறன்கள் மாணவர்களின் அன்றாடத் தொடர்புகொள்வதற்கும், பனுவல்களைப் புரிந்துகொள்வதற்கும் வழிகோலுகின்றன.</p>
+                                <p class="font-bold text-blue-900 mt-2">மாணவர்கள் அடைய வேண்டிய திறன்கள்:</p>
+                                <ul class="list-disc list-inside space-y-1 pl-1">
+                                    <li><strong>கேட்டல்:</strong> மாணவர்கள் பல்வேறு ஒலிகளை அடையாளம் காணவும், எழுத்துக்களைச் சரியாக ஒலிக்கவும் கற்றுக் கொள்வர். மேலும், கேட்கும் கேள்விகள், வேண்டுகோள்கள் மற்றும் கட்டளைகளுக்கு ஏற்பத் துலங்குவர்.</li>
+                                    <li><strong>பேச்சு:</strong> மாணவர்கள் அன்றாட உரையாடல்களில் பண்புடனும் தெளிவுடனும் பேசவும், சிறுவர் பாடல்களைப் பாடவும், கதைகளைக் கூறவும் பயிற்சி பெறுவர்.</li>
+                                    <li><strong>வாசிப்பு:</strong> புத்தகங்களை முறையாகக் கையாளும் திறனையும், சின்னங்கள் மற்றும் குறியீடுகளைப் புரிந்துகொள்ளும் திறனையும் பெறுவர். எழுத்துக்களின் வடிவம் மற்றும் ஒலியை அறிந்து, சொற்கள் மற்றும் எளிய வாக்கியங்களை வாசித்துப் புரிந்து கொள்வர்.</li>
+                                    <li><strong>எழுத்து:</strong> மாணவர்கள் கை மற்றும் விரல்களின் மென் இயக்கக் கட்டுப்பாட்டுடன் எழுதுகோலைச் சரியாகப் பயன்படுத்தவும், முறையான அமர்வு நிலையில் எழுதவும் பழகுவர். தமிழ் எழுத்துக்களின் அடிப்படை வடிவங்களை வரைவதோடு, ஓவியம் அல்லது குறியீடுகள் மூலம் தங்கள் எண்ணங்களை வெளிப்படுத்துவர்.</li>
                                 </ul>
                             </div>
                         </div>
@@ -571,42 +591,6 @@
         </section>
 
         <section id="content-dashboard" class="tab-content space-y-12">
-            <div class="bg-white p-8 rounded-3xl border border-slate-200/60 shadow-sm no-print">
-                <h3 class="text-sm font-extrabold text-[#0B1528] uppercase tracking-wider mb-6 flex items-center gap-2">
-                    <i class="fas fa-star" class="w-5 h-5 text-amber-500"></i>Tujuh Kompetensi Utama
-                </h3>
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
-                    <div class="bg-slate-50 border border-slate-200 p-5 rounded-2xl text-center premium-card">
-                        <div class="w-12 h-12 mx-auto bg-sky-50 text-sky-600 rounded-2xl flex items-center justify-center border border-sky-100/60"><i class="fas fa-seedling" class="w-5 h-5"></i></div>
-                        <p class="text-[11px] font-extrabold text-slate-800 uppercase tracking-wide mt-3">Perkembangan Diri</p>
-                    </div>
-                    <div class="bg-slate-50 border border-slate-200 p-5 rounded-2xl text-center premium-card">
-                        <div class="w-12 h-12 mx-auto bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center border border-indigo-100/60"><i class="fas fa-comments" class="w-5 h-5"></i></div>
-                        <p class="text-[11px] font-extrabold text-slate-800 uppercase tracking-wide mt-3">Komunikasi</p>
-                    </div>
-                    <div class="bg-slate-50 border border-slate-200 p-5 rounded-2xl text-center premium-card">
-                        <div class="w-12 h-12 mx-auto bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center border border-emerald-100/60"><i class="fas fa-hands-helping" class="w-5 h-5"></i></div>
-                        <p class="text-[11px] font-extrabold text-slate-800 uppercase tracking-wide mt-3">Tanggungjawab</p>
-                    </div>
-                    <div class="bg-slate-50 border border-slate-200 p-5 rounded-2xl text-center premium-card">
-                        <div class="w-12 h-12 mx-auto bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center border border-blue-100/60"><i class="fas fa-laptop-code" class="w-5 h-5"></i></div>
-                        <p class="text-[11px] font-extrabold text-slate-800 uppercase tracking-wide mt-3">Fasih Digital</p>
-                    </div>
-                    <div class="bg-slate-50 border border-slate-200 p-5 rounded-2xl text-center premium-card">
-                        <div class="w-12 h-12 mx-auto bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center border border-amber-100/60"><i class="fas fa-book-reader" class="w-5 h-5"></i></div>
-                        <p class="text-[11px] font-extrabold text-slate-800 uppercase tracking-wide mt-3">Literasi Pelbagai</p>
-                    </div>
-                    <div class="bg-slate-50 border border-slate-200 p-5 rounded-2xl text-center premium-card">
-                        <div class="w-12 h-12 mx-auto bg-rose-50 text-rose-600 rounded-2xl flex items-center justify-center border border-rose-100/60"><i class="fas fa-brain" class="w-5 h-5"></i></div>
-                        <p class="text-[11px] font-extrabold text-slate-800 uppercase tracking-wide mt-3">Kemahiran Berfikir</p>
-                    </div>
-                    <div class="bg-slate-50 border border-slate-200 p-5 rounded-2xl text-center premium-card">
-                        <div class="w-12 h-12 mx-auto bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center border border-purple-100/60"><i class="fas fa-infinity" class="w-5 h-5"></i></div>
-                        <p class="text-[11px] font-extrabold text-slate-800 uppercase tracking-wide mt-3">Pembelajaran Sepanjang Hayat</p>
-                    </div>
-                </div>
-            </div>
-
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-b border-slate-200/80 pb-6 no-print">
                 <div>
                     <h2 class="text-2xl font-extrabold tracking-tight text-[#0B1528] flex items-center gap-2.5">
@@ -700,6 +684,56 @@
                     <div class="lg:col-span-4 border-r border-slate-100 pr-0 lg:pr-8 space-y-3" id="intervensi-subject-menu"></div>
                     <div class="lg:col-span-8 space-y-6" id="intervensi-details-panel"></div>
                 </div>
+            </div>
+
+            <div class="bg-blue-600 text-white rounded-3xl p-8 no-print">
+                <h2 class="text-2xl font-extrabold uppercase tracking-tight flex items-center gap-3">
+                    <i class="fas fa-chart-bar" class="w-7 h-7"></i>Analisis Data & Laporan Prestasi
+                </h2>
+                <p class="text-sm text-blue-100 mt-2">Lihat pandangan keseluruhan pencapaian kelas dalam format statistik dan visualisasi.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 no-print">
+                <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm premium-card">
+                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Murid Cemerlang (TP3)</p>
+                    <p class="text-5xl font-black text-emerald-600 mt-2" id="analytics-tp3-count">0</p>
+                </div>
+                <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm premium-card">
+                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Perlu Intervensi (TP1)</p>
+                    <p class="text-5xl font-black text-rose-600 mt-2" id="analytics-tp1-count">0</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm premium-card">
+                <h3 class="text-sm font-extrabold text-[#0B1528] uppercase tracking-wider mb-6">Pencapaian Mengikut Subjek</h3>
+                <div class="space-y-4" id="analytics-subject-breakdown"></div>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm premium-card">
+                <h3 class="text-sm font-extrabold text-[#0B1528] uppercase tracking-wider mb-6 flex items-center gap-2">
+                    <i class="fas fa-exclamation-circle" class="w-5 h-5 text-rose-600"></i>Murid Memerlukan Bantuan
+                </h3>
+                <div id="analytics-at-risk-students" class="space-y-3"></div>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm premium-card no-print">
+                <h3 class="text-sm font-extrabold text-[#0B1528] uppercase tracking-wider mb-2 flex items-center gap-2">
+                    <i class="fas fa-child" class="w-5 h-5 text-indigo-600"></i>Sokongan Asas 3M (Membaca, Menulis, Mengira)
+                </h3>
+                <p class="text-xs text-slate-500 font-medium mb-6">Menghimpunkan murid yang memerlukan bimbingan tambahan dalam kemahiran asas membaca, menulis dan mengira.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="analytics-3m-groups"></div>
+                <div class="mt-6 bg-indigo-50 border border-indigo-200 rounded-xl p-5">
+                    <h4 class="text-xs font-black text-indigo-800 uppercase tracking-wide flex items-center gap-2 mb-2">
+                        <i class="fas fa-route" class="w-4 h-4"></i>Cadangan Pelan Tindakan Awal (Rujukan KP2026)
+                    </h4>
+                    <div class="text-xs text-indigo-700 leading-relaxed" id="analytics-3m-action-plan"></div>
+                </div>
+            </div>
+
+            <div class="bg-blue-50 border border-blue-200 rounded-3xl p-8 no-print">
+                <button onclick="openPrintWizard('analytics')" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl transition-all">
+                    <i class="fas fa-print" class="w-4 h-4 inline mr-2"></i>Cetak Laporan Analisis Data
+                </button>
             </div>
         </section>
 
@@ -1090,64 +1124,6 @@ function doPost(e) {
             </div>
         </section>
 
-        <!-- ======== TAB 10: ANALITIK & LAPORAN ======== -->
-        <section id="content-analytics" class="tab-content hidden space-y-10">
-            <div class="bg-blue-600 text-white rounded-3xl p-8 no-print">
-                <h2 class="text-2xl font-extrabold uppercase tracking-tight flex items-center gap-3">
-                    <i class="fas fa-chart-bar" class="w-7 h-7"></i>Analisis Data & Laporan Prestasi
-                </h2>
-                <p class="text-sm text-blue-100 mt-2">Lihat pandangan keseluruhan pencapaian kelas dalam format statistik dan visualisasi.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 no-print">
-                <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm premium-card">
-                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Mod Tahap Penguasaan</p>
-                    <p class="text-5xl font-black text-[#0B1528] mt-2" id="analytics-avg-tp">-</p>
-                    <p class="text-xs text-slate-500 font-medium mt-2">Daripada semua rekod</p>
-                </div>
-                <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm premium-card">
-                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Murid Cemerlang (TP3)</p>
-                    <p class="text-5xl font-black text-emerald-600 mt-2" id="analytics-tp3-count">0</p>
-                </div>
-                <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm premium-card">
-                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Perlu Intervensi (TP1)</p>
-                    <p class="text-5xl font-black text-rose-600 mt-2" id="analytics-tp1-count">0</p>
-                </div>
-            </div>
-
-            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm premium-card">
-                <h3 class="text-sm font-extrabold text-[#0B1528] uppercase tracking-wider mb-6">Pencapaian Mengikut Subjek</h3>
-                <div class="space-y-4" id="analytics-subject-breakdown"></div>
-            </div>
-
-            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm premium-card">
-                <h3 class="text-sm font-extrabold text-[#0B1528] uppercase tracking-wider mb-6 flex items-center gap-2">
-                    <i class="fas fa-exclamation-circle" class="w-5 h-5 text-rose-600"></i>Murid Memerlukan Bantuan
-                </h3>
-                <div id="analytics-at-risk-students" class="space-y-3"></div>
-            </div>
-
-            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm premium-card no-print">
-                <h3 class="text-sm font-extrabold text-[#0B1528] uppercase tracking-wider mb-2 flex items-center gap-2">
-                    <i class="fas fa-child" class="w-5 h-5 text-indigo-600"></i>Sokongan Asas 3M (Membaca, Menulis, Mengira)
-                </h3>
-                <p class="text-xs text-slate-500 font-medium mb-6">Menghimpunkan murid yang memerlukan bimbingan tambahan dalam kemahiran asas membaca, menulis dan mengira.</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="analytics-3m-groups"></div>
-                <div class="mt-6 bg-indigo-50 border border-indigo-200 rounded-xl p-5">
-                    <h4 class="text-xs font-black text-indigo-800 uppercase tracking-wide flex items-center gap-2 mb-2">
-                        <i class="fas fa-route" class="w-4 h-4"></i>Cadangan Pelan Tindakan Awal (Rujukan KP2026)
-                    </h4>
-                    <div class="text-xs text-indigo-700 leading-relaxed" id="analytics-3m-action-plan"></div>
-                </div>
-            </div>
-
-            <div class="bg-blue-50 border border-blue-200 rounded-3xl p-8 no-print">
-                <button onclick="openPrintWizard('analytics')" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl transition-all">
-                    <i class="fas fa-print" class="w-4 h-4 inline mr-2"></i>Cetak Laporan Analisis Data
-                </button>
-            </div>
-        </section>
-
         <!-- ======== TAB HELP: BANTUAN & PANDUAN ======== -->
         <section id="content-help" class="tab-content hidden max-w-4xl mx-auto space-y-10 no-print">
             <div class="bg-blue-600 text-white rounded-3xl p-8">
@@ -1165,6 +1141,10 @@ function doPost(e) {
                     <label class="flex items-center p-4 border border-slate-200 rounded-xl hover:bg-slate-50 cursor-pointer">
                         <input type="checkbox" class="w-5 h-5 text-emerald-600 rounded">
                         <span class="ml-3 text-sm font-semibold text-slate-700">Lengkapkan tetapan sekolah & guru</span>
+                    </label>
+                    <label class="flex items-center p-4 border border-slate-200 rounded-xl hover:bg-slate-50 cursor-pointer">
+                        <input type="checkbox" class="w-5 h-5 text-emerald-600 rounded">
+                        <span class="ml-3 text-sm font-semibold text-slate-700">Pilih subjek yang anda ajar</span>
                     </label>
                     <label class="flex items-center p-4 border border-slate-200 rounded-xl hover:bg-slate-50 cursor-pointer">
                         <input type="checkbox" class="w-5 h-5 text-emerald-600 rounded">
@@ -1211,6 +1191,27 @@ function doPost(e) {
                             <i class="fas fa-chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition"></i>
                         </summary>
                         <p class="text-xs text-slate-600 mt-3">Pergi ke "Transkrip Murid" > Pilih murid > Cetak Laporan > Simpan sebagai PDF > Hantar kepada ibu bapa.</p>
+                    </details>
+                    <details class="bg-slate-50 p-5 rounded-xl border border-slate-200 group cursor-pointer">
+                        <summary class="font-bold text-sm text-slate-900 flex items-center justify-between">
+                            Bagaimana cara pilih subjek yang saya ajar sahaja?
+                            <i class="fas fa-chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition"></i>
+                        </summary>
+                        <p class="text-xs text-slate-600 mt-3">Pergi ke tab "Tetapan" > kad "Tetapan Subjek Diajar" > tandakan subjek yang anda ajar > klik "Simpan Subjek Diajar". Hanya subjek yang ditandakan akan dipaparkan di borang Pengisian Pentaksiran, Transkrip Murid, dan Analisis Tahap Penguasaan.</p>
+                    </details>
+                    <details class="bg-slate-50 p-5 rounded-xl border border-slate-200 group cursor-pointer">
+                        <summary class="font-bold text-sm text-slate-900 flex items-center justify-between">
+                            Apakah tab "Panduan Kurikulum Prasekolah"?
+                            <i class="fas fa-chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition"></i>
+                        </summary>
+                        <p class="text-xs text-slate-600 mt-3">Tab ini memaparkan infografik ringkas KP2026 — matlamat utama, tujuh kompetensi utama, enam bidang pembelajaran, serta tafsiran sistem Tahap Penguasaan (TP), lengkap dengan maklumat lanjut setiap bidang.</p>
+                    </details>
+                    <details class="bg-slate-50 p-5 rounded-xl border border-slate-200 group cursor-pointer">
+                        <summary class="font-bold text-sm text-slate-900 flex items-center justify-between">
+                            Ke mana perginya tab "Analisis Data"?
+                            <i class="fas fa-chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition"></i>
+                        </summary>
+                        <p class="text-xs text-slate-600 mt-3">Tab "Analisis Data" kini digabungkan bersama "Ringkasan Laporan" menjadi satu tab "Analisis Tahap Penguasaan" — semua statistik, pencapaian mengikut subjek, cadangan intervensi, dan sokongan 3M kini berada dalam satu tempat.</p>
                     </details>
                 </div>
             </div>
@@ -2032,11 +2033,10 @@ function doPost(e) {
                 btn.className = "nav-tab flex items-center justify-center px-5 py-3 text-xs font-bold rounded-xl whitespace-nowrap transition-all duration-350 bg-white text-[#0B1528] shadow-md";
             }
 
-            if (tabId === 'dashboard') renderDashboard();
+            if (tabId === 'dashboard') { renderDashboard(); renderAnalytics(); }
             if (tabId === 'senarai') renderLogTable();
             if (tabId === 'pelaporan') renderIndividualCertificate();
             if (tabId === 'setup') loadTemplateSettings();
-            if (tabId === 'analytics') renderAnalytics();
             initLucideIcons();
         }
 
@@ -2693,8 +2693,13 @@ function doPost(e) {
             const panel = document.getElementById('intervensi-details-panel');
             if (!menu || !panel) return;
 
+            const availableSubjects = Object.keys(COMPONENTS).filter(sub => TAUGHT_SUBJECTS.length === 0 || TAUGHT_SUBJECTS.includes(sub));
+            if (!availableSubjects.includes(intervensiSubjectActive) && availableSubjects.length > 0) {
+                intervensiSubjectActive = availableSubjects[0];
+            }
+
             let menuHTML = '';
-            Object.keys(COMPONENTS).forEach(sub => {
+            availableSubjects.forEach(sub => {
                 let countTarget = 0;
                 STUDENTS.forEach(st => {
                     const avg = calculateAverageTP(records, st, sub);
@@ -3087,7 +3092,6 @@ function doPost(e) {
 
             const modeTP = calculateModeTP(filteredRecords.map(r => r.tp));
             
-            safeSetText('analytics-avg-tp', modeTP);
             safeSetText('analytics-tp1-count', tp1Count);
             safeSetText('analytics-tp3-count', tp3Count);
 
